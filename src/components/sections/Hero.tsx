@@ -1,12 +1,38 @@
-"use client"
+
 import { ChevronDown, ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 import { techStack } from '@/configs/hero.config';
-import { useTheme } from 'next-themes';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+
+
 export default function Hero() {
-    const { theme } = useTheme();
+
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const [hidden, setIsHidden] = useState(false);
+  const {scrollY} = useScroll()
+
+useMotionValueEvent( scrollY, "change", (latest)=>{
+
+  if(latest > 10) setIsHidden(true);
+  else setIsHidden(false);
+
+})
+
+
+  // Prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null; 
+
+
+
     return (
-        <div className="flex items-center min-h-[calc(100vh-100px)] px-4 sm:px-6 lg:px-8 ">
+        <div className="flex items-center  h-screen px-4 sm:px-6 lg:px-8   ">
              <div className="w-full max-w-7xl mx-auto">
              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             
@@ -100,10 +126,9 @@ export default function Hero() {
             {/* Right Content - Image */}
             <div className="flex justify-center lg:justify-end order-first lg:order-last">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-3xl transform scale-110"></div>
-                <div className="relative rounded-full overflow-hidden   ">
+                <div className="relative  overflow-hidden   ">
                 <Image 
-                src="/pfp.jpg" 
+                src="/bigpfp.jpg" 
                 alt="Hero"
                 width={900} 
                 height={900} />
@@ -113,32 +138,19 @@ export default function Hero() {
           </div>
              </div>
                   {/* Scroll Indicator */}
-                  <div className={`absolute bottom-4 sm:bottom-8 left-4 sm:left-8 flex items-center gap-2 sm:gap-3 text-xs sm:text-sm transition-colors duration-500 ${
+                  <div 
+
+                  className={` absolute bottom-4 sm:bottom-8 left-4 sm:left-8 flex items-center gap-2 sm:gap-3 text-xs sm:text-sm transition-all duration-300 ${
         theme === "dark"  ? 'text-gray-400' : 'text-muted-foreground'
-      }`}>
+      }
+      ${hidden ? 'opacity-0' : 'opacity-100'}
+      `}>
         <span className="hidden sm:block">Scroll Down</span>
         <ChevronDown size={14} className="sm:w-4 sm:h-4 animate-bounce" />
       </div>
 
-      {/* Background Elements */}
-      <div className={`absolute top-1/2 left-1/4 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 rounded-full blur-3xl transition-opacity duration-500 ${
-        theme === "dark"  ? 'bg-purple-500/5' : 'bg-purple-500/10'
-      }`}></div>
-      <div className={`absolute bottom-1/4 right-1/4 w-24 h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 rounded-full blur-3xl transition-opacity duration-500 ${
-        theme === "dark"  ? 'bg-blue-500/5' : 'bg-blue-500/10'
-      }`}></div>
-      
-      {/* Grid Pattern Overlay */}
-      <div className={`absolute inset-0 pointer-events-none transition-opacity duration-500 ${
-        theme === "dark"  ? 'opacity-[0.02]' : 'opacity-[0.05]'
-      }`}>
-        <div className="w-full h-full" style={{
-          backgroundImage: theme === "dark"  
-            ? 'linear-gradient(rgba(255,255,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px)'
-            : 'linear-gradient(rgba(0,0,0,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.1) 1px,transparent 1px)',
-          backgroundSize: '30px 30px'
-        }}></div>
-      </div>
+    
+   
         </div>
     )
 }

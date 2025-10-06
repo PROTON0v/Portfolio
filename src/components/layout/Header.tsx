@@ -21,7 +21,7 @@ export default function Header() {
         <motion.header className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center w-full px-4 py-4 sm:px-8 sm:py-6 
          ${
         scrolled
-          ? "bg-[var(--color-card)] border-b border-[var(--color-border)] shadow-sm"
+          ? " border-b border-[var(--color-border)] shadow-sm backdrop-blur-lg bg-black/10"
           : "bg-transparent"
       }
         `}>
