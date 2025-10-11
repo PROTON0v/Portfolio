@@ -1,6 +1,6 @@
 
 
-const techStack: string[] = ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind'];
+const techStack: string[] = ['React', 'Next.js', 'TypeScript', 'JavaScript', 'PostgreSQL', 'Tailwind'];
 
 
 export {techStack};

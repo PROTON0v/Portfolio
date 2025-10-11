@@ -1,16 +1,6 @@
-// localstorage methods 
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-export const storage =  {
-
-set(name: string, item) {
-    localStorage.setItem(name, JSON.stringify(item));
-},
-
-get(item: string) {
-   return localStorage.getItem(item);
-},
-
-remove(item :string): void {
-    localStorage.removeItem(item);
-}
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
 }

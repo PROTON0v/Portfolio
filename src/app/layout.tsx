@@ -25,8 +25,8 @@ export default function RootLayout({
       <html 
       lang="en" 
       suppressHydrationWarning
-      className={`${outfit.variable} ${inter.variable}`}>
-        <body>
+      className={`${outfit.variable} ${inter.variable} `}>
+        <body className="scroll-bar">
           <ThemeProvider>
             <Header />
             {children}

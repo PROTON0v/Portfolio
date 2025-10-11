@@ -48,7 +48,7 @@ export default function Sheet({ isOpen, onClose }: SheetProps) {
                     console.log(`${item} clicked`)
                     onClose()
                   }}
-                  className="w-full text-left text-base font-medium text-[var(--color-foreground)] hover:text-[var(--color-primary)] transition-colors py-3 border-b border-[var(--color-border)] last:border-none"
+                  className="w-full text-left text-base font-medium text-[var(--color-foreground)] hover:text-[var(--color-primary)]  py-3 border-b border-[var(--color-border)] last:border-none"
                 >
                   {item}
                 </motion.button>
