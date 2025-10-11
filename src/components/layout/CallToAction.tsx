@@ -13,14 +13,16 @@ export default function CallToAction() {
 
     return (
          // Call to Action 
-         <motion.div 
+         <motion.div
          initial={{ opacity: 0, y: 30 }}
          whileInView={{ opacity: 1, y: 0 }}
          viewport={{ once: true }}
          transition={{ duration: 0.6, delay: 0.4 }}
          className="text-center mt-16 sm:mt-20 lg:mt-24"
        >
-         <div className={`inline-flex items-center gap-4 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-secondary border border-border hover:bg-accent
+         <div 
+        
+         className={`inline-flex items-center gap-4 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-secondary border border-border hover:bg-accent
          `}>
            <span className={`text-sm sm:text-base transition-colors duration-500 text-muted-foreground `}>
              Interested in working together?

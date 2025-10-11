@@ -21,8 +21,14 @@ export default function ScrollToTop() {
     <div className={` flex-col gap-8 fixed z-50 right-8 top-[90%]  ${
      scrolled ? "flex" : "hidden"   
     }`}>
-      <Button variant="outline" size="icon" className="rounded-full cursor-pointer">
+      <Button 
+      onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
+      variant="outline" 
+      size="icon" 
+      className="rounded-full cursor-pointer">
+
         <ArrowUpIcon />
+        
       </Button>
     </div>
   )

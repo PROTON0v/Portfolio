@@ -15,6 +15,13 @@ export default function Navbar({isOpen, setIsOpen}:ChildProps) {
         setIsOpen(false);
     }
 
+    const handleScrollToBottom = () => {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth",
+  });
+};
+
     return (
         <>
          <nav className="sm:flex hidden  items-center justify-between px-4 relative z-10 ">
@@ -22,7 +29,7 @@ export default function Navbar({isOpen, setIsOpen}:ChildProps) {
         <div className="flex items-center gap-8 text-sm">
           <a href="#projects-section" className="hover:opacity-60  cursor-pointer">Work</a>
           <a href="#about-section" className="hover:opacity-60  cursor-pointer">About</a>
-          <a href="#contact" className="hover:opacity-60  cursor-pointer">Contact</a>
+          <button onClick={handleScrollToBottom} className="hover:opacity-60  cursor-pointer">Contact</button>
         </div>
 
       </nav>
