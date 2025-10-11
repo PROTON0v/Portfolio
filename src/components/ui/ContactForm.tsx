@@ -22,7 +22,7 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
       email: "",
       message: "",
     });
-  console.log(errors)
+  
     const abortRef = useRef<AbortController | null>(null);
   
     useEffect(() => {

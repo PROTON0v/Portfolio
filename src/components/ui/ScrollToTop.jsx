@@ -18,7 +18,7 @@ export default function ScrollToTop() {
 
 
   return (
-    <div className={` flex-col gap-8 fixed z-50 right-8 top-[90%]  ${
+    <div className={` flex-col gap-8 fixed  z-30 right-8 top-[90%]  ${
      scrolled ? "flex" : "hidden"   
     }`}>
       <Button 

@@ -7,7 +7,16 @@ interface SheetProps {
   onClose: () => void
 }
 
-const navItems = ["Work", "About me", "Projects", "Contact"]
+type NavItems = { item: string; target: string; };
+
+const navItems: NavItems[] = [
+  {item:"My Work", target: "projects-section"}, 
+  {item:"About me", target: "about-section"}, 
+  {item:"Contact", target: "contact-section"}
+];
+
+
+
 
 export default function Sheet({ isOpen, onClose }: SheetProps) {
   // Close on Escape key
@@ -17,13 +26,22 @@ export default function Sheet({ isOpen, onClose }: SheetProps) {
     return () => document.removeEventListener("keydown", handler)
   }, [onClose])
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
+
+
   return (
     <AnimatePresence>
       {isOpen && (
         <>
           {/* Backdrop */}
           <motion.div
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+            className="fixed inset-0 bg-black/50   z-40 h-screen"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -41,16 +59,16 @@ export default function Sheet({ isOpen, onClose }: SheetProps) {
             <div className="flex flex-col items-start py-6 px-6 gap-4">
               {navItems.map((item) => (
                 <motion.button
-                  key={item}
+                  key={item.item}
                   whileHover={{ x: 5 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => {
-                    console.log(`${item} clicked`)
+                    scrollToSection(item.target)
                     onClose()
                   }}
                   className="w-full text-left text-base font-medium text-[var(--color-foreground)] hover:text-[var(--color-primary)]  py-3 border-b border-[var(--color-border)] last:border-none"
                 >
-                  {item}
+                  {item.item}
                 </motion.button>
               ))}
             </div>

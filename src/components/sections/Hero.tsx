@@ -30,7 +30,7 @@ useMotionValueEvent( scrollY, "change", (latest)=>{
 
 
     return (
-        <div className="flex items-center  min-h-screen px-4 sm:px-6 lg:px-8   ">
+        <div className="flex items-center  min-h-screen px-4 sm:px-6 lg:px-8  relative ">
              <div className="w-full max-w-7xl mx-auto">
              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             
@@ -124,15 +124,18 @@ useMotionValueEvent( scrollY, "change", (latest)=>{
               className="flex justify-center lg:justify-end order-first lg:order-last"
             >
               <div className="relative">
-                <div className="relative  overflow-hidden   ">
+                <div className="relative  overflow-hidden   w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px]">
+
                 <Image 
-                src="/bigpfp.jpg" 
+                src="/trbgpfp.png" 
                 alt="Hero"
                 width={900} 
                 height={900}
                 priority
-                 />
+                 /> 
+                 
                 </div>
+               
               </div>
             </motion.div>
           </div>
@@ -140,8 +143,7 @@ useMotionValueEvent( scrollY, "change", (latest)=>{
                   {/* Scroll Indicator */}
                   <div 
 
-                  className={` absolute bottom-4 sm:bottom-8 left-4 sm:left-8 flex items-center gap-2 sm:gap-3 text-xs sm:text-sm  ext-muted-foregroun
-        text-foreground
+                  className={` absolute bottom-4 sm:bottom-8 left-4 md:-left-26 lg:left-6 xl:-left-36 flex items-center gap-2 sm:gap-3 text-xs sm:text-sm  text-muted-foreground
       ${hidden ? 'opacity-0' : 'opacity-100'}
       `}>
         <span className="hidden sm:block">Scroll Down</span>
