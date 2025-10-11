@@ -3,11 +3,21 @@
 
 
 import { motion } from "framer-motion";
-
-
+import { useState } from "react";
+import ContactForm from "../ui/ContactForm";
 
 export default function CallToAction() {
 
+  const [ isOpen, setIsOpen ] = useState(false);
+
+
+
+
+  const handleClose = ()=> {
+
+    setIsOpen(prev => !prev);
+
+  }
 
  
 
@@ -27,10 +37,13 @@ export default function CallToAction() {
            <span className={`text-sm sm:text-base transition-colors duration-500 text-muted-foreground `}>
              Interested in working together?
            </span>
-           <button className={`cursor-pointer px-4 sm:px-6 py-2 rounded-full text-sm sm:text-base bg-primary text-primary-foreground hover:bg-primary/90 `}>
+           <button 
+           onClick={()=> setIsOpen(prev => !prev)}
+           className={`cursor-pointer px-4 sm:px-6 py-2 rounded-full text-sm sm:text-base bg-primary text-primary-foreground hover:bg-primary/90 `}>
              Get In Touch
            </button>
          </div>
+         <ContactForm onClose={handleClose} isOpen={isOpen}/>
        </motion.div>
     )
 }
