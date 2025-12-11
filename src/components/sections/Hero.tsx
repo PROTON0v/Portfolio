@@ -124,10 +124,10 @@ useMotionValueEvent( scrollY, "change", (latest)=>{
               className="flex justify-center lg:justify-end order-first lg:order-last"
             >
               <div className="relative">
-                <div className="relative  overflow-hidden   w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px]">
+                <div className="relative  overflow-hidden   w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px] ">
 
                 <Image 
-                src="/trbgpfp.png" 
+                src="/rmg2.png" 
                 alt="Hero"
                 width={900} 
                 height={900}
