@@ -4,7 +4,7 @@ import { memo } from "react";
 import { technologies } from "@/configs/aboutIcons.config";
 
 const repeatTechnologies = [...technologies, ...technologies];
-const repeatTechnologiesRev = [...technologies, ...technologies].reverse();
+const repeatTechnologiesRev = [...technologies, ...technologies];
 const About = memo(function About() {
   return (
     <motion.section
@@ -15,7 +15,7 @@ const About = memo(function About() {
       id="about-section"
       className="min-h-screen pb-5 md:pb-20 pt-20 sm:pt-24 lg:pt-32 px-4 sm:px-6 lg:px-8"
     >
-      <div className="w-full max-w-7xl mx-auto">
+      <div className="w-full max-w-4xl xl:max-w-7xl mx-auto">
         {/* About Me Section */}
         <div className="mb-20 sm:mb-24 lg:mb-32">
           {/* Section Header */}
@@ -82,7 +82,7 @@ const About = memo(function About() {
             {/* About Content */}
             <div className=" space-y-6 sm:space-y-8 mx-auto">
               <h3 className="text-xl sm:text-2xl mb-4 sm:mb-6">My Journey</h3>
-              <div className="space-y-4 sm:space-y-6 w-80 sm:w-auto">
+              <div className="space-y-4 sm:space-y-6 w-80 md:w-150 lg:w-auto">
                 <p className={`leading-relaxed  text-muted-foreground`}>
                   I started coding out of curiosity — wanting to understand how
                   digital products work. That curiosity turned into a passion
@@ -114,7 +114,7 @@ const About = memo(function About() {
 
         {/* Divider Line */}
         <div
-          className={`w-full h-px mb-20 sm:mb-24 lg:mb-32  bg-gradient-to-r from-transparent via-border to-transparent
+          className={`w-full h-px mb-10 sm:mb-24 lg:mb-32  bg-gradient-to-r from-transparent via-border to-transparent
         `}
         ></div>
 
@@ -137,7 +137,7 @@ const About = memo(function About() {
               My <span className="font-light">Tech Stack</span>
             </h2>
             <p
-              className={`text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed  text-muted-foreground`}
+              className={`text-lg sm:text-xl w-80 sm:w-auto mx-auto leading-relaxed  text-muted-foreground`}
             >
               Technologies I use to build modern, scalable web applications.
             </p>

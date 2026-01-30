@@ -32,14 +32,14 @@ useMotionValueEvent( scrollY, "change", (latest)=>{
     return (
         <div className="flex items-center  min-h-screen px-4 sm:px-6 lg:px-8  relative ">
              <div className="w-full max-w-7xl mx-auto">
-             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+             <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-16 items-center">
             
             {/* Left Content */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="space-y-6 sm:space-y-8 text-center lg:text-left"
+              className="space-y-6 sm:space-y-8 text-center xl:text-left "
             >
               {/* Main Title */}
               <div className="space-y-3 sm:space-y-4">
@@ -51,20 +51,20 @@ useMotionValueEvent( scrollY, "change", (latest)=>{
 
               {/* Description */}
               <div className="space-y-4 sm:space-y-6">
-              <p className={`text-lg sm:text-xl leading-relaxed max-w-md mx-auto lg:mx-0 text-muted-foreground`}>
+              <p className={`text-lg sm:text-xl leading-relaxed max-w-md mx-auto xl:mx-0 text-muted-foreground`}>
                   I make FullStack web Applications with Next.js
                 </p>
                 
                 {/* Additional Info */}
                 <div className="space-y-3 sm:space-y-4">
-                <div className={`flex items-center justify-center lg:justify-start gap-3 sm:gap-4 text-sm 
+                <div className={`flex items-center justify-center xl:justify-start gap-3 sm:gap-4 text-sm 
                   text-muted-foreground`}>
                   
                     <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                     Available for freelance projects
                   </div>
                   
-                  <div className={`text-sm text-center lg:text-left  text-muted-foreground`}>
+                  <div className={`text-sm text-center xl:text-left  text-muted-foreground`}>
                     <span className="opacity-60">Based in</span> Algeria • <span className="opacity-60">Experience</span> 2+ years
                   </div>
                 </div>
@@ -73,10 +73,10 @@ useMotionValueEvent( scrollY, "change", (latest)=>{
               {/* Skills */}
               <div className="space-y-3 sm:space-y-4">
                 
-              <div className={`text-xs sm:text-sm uppercase tracking-wider text-center lg:text-left
+              <div className={`text-xs sm:text-sm uppercase tracking-wider text-center xl:text-left
                   text-muted-foreground`}>Expertise</div>
 
-                <div className="flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start">
+                <div className="flex flex-wrap gap-2 sm:gap-3 justify-center xl:justify-start">
                   {techStack.map((skill) => (
                     <span 
                       key={skill} 
@@ -89,7 +89,7 @@ useMotionValueEvent( scrollY, "change", (latest)=>{
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-2 sm:pt-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-2 sm:pt-4 justify-center xl:justify-start">
                <a href="#projects-section">
                  <button 
                 className={`cursor-pointer group flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full  text-sm sm:text-base 
@@ -97,7 +97,7 @@ useMotionValueEvent( scrollY, "change", (latest)=>{
                   <span>View My Work</span>
                   <ArrowRight size={14} className="sm:w-4 sm:h-4 group-hover:translate-x-1 " />
                 </button>
-                </a>
+                </a>  
                 
                 <div className="flex items-center gap-3 sm:gap-4">
                   <a href="#" className={`p-2 rounded-full 
@@ -121,7 +121,7 @@ useMotionValueEvent( scrollY, "change", (latest)=>{
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-              className="flex justify-center lg:justify-end order-first lg:order-last"
+              className="flex justify-center xl:justify-end order-first xl:order-last"
             >
               <div className="relative">
                 <div className="relative  overflow-hidden   w-[300px] md:w-[400px] lg:w-[500px] xl:w-[600px] ">
